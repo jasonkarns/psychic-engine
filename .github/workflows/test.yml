@@ -1,0 +1,12 @@
+name: Test
+
+on:
+  push:
+  workflow_dispatch:
+    ref: milpu
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "running"
