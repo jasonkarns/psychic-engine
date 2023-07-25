@@ -1,12 +1,1 @@
-name: Test
-
-on:
-  push:
-  workflow_dispatch:
-    ref: special
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "running"
+# placeholder for workflow_dispatch
