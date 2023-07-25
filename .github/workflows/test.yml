@@ -3,3 +3,4 @@ on: workflow_dispatch
 jobs:
   test:
     if: github.ref_name != main
+    steps:
