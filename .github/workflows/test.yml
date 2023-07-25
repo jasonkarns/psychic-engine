@@ -2,5 +2,6 @@ name: Test
 on: workflow_dispatch
 jobs:
   test:
-    if: github.ref_name != main
-    steps: []
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This workflow should only be run from milpu" && false
