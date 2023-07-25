@@ -4,4 +4,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This workflow should only be run from milpu" && false
+      - run: |
+          cat <<-ERR && false
+            This workflow should only be run from other branch.
+            It only exists on main because GitHub requires the workflow
+            to exist on main in order to expose the Run Workflow UI.
+          ERR
