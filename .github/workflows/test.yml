@@ -16,6 +16,7 @@ jobs:
       - run: test ${{ matrix.group }} = 1
 
   jobby:
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     needs: [pre, good]
     steps:
