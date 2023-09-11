@@ -18,3 +18,5 @@ jobs:
   jobby:
     runs-on: ubuntu-latest
     needs: [pre, good]
+    steps:
+      - run: true
