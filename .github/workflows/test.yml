@@ -2,13 +2,19 @@ name: Test
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  other:
-    name: jobby
+  good:
+    runs-on: ubuntu-latest
+    steps:
+      - run: true
+
+  pre:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
         group: [1, 2]
-
     steps:
       - run: test ${{ matrix.group }} = 1
+
+  jobby:
+    runs-on: ubuntu-latest
+    needs: [pre, good]
