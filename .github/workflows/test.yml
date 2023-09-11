@@ -2,7 +2,8 @@ name: Test
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  jobby:
+  other:
+    name: jobby
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
