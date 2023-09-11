@@ -4,10 +4,10 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   jobby:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [1, 2]
+
     steps:
-      - run: |
-          cat <<-ERR && true
-            This workflow should only be run from other branch.
-            It only exists on main because GitHub requires the workflow
-            to exist on main in order to expose the Run Workflow UI.
-          ERR
+      - run: test ${{ matrix.group }} = 1
